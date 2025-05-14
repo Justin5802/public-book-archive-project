@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Recommendations | Public Book Archive</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Book Recommendation Quiz</h1>
+      <p>Answer a few questions to get personalized book suggestions</p>
+    </header>
+    
+    <main>
+      <form id="recommendForm" class="quiz-form">
+        <div class="quiz-step active" data-step="1">
+          <h2>What's your current mood?</h2>
+          <div class="options">
+            <label class="option-card">
+              <input type="radio" name="mood" value="happy" required>
+              <div class="option-content">
+                <h3>Happy/Upbeat</h3>
+                <p>Looking for something light and cheerful</p>
+              </div>
+            </label>
+            
+            <label class="option-card">
+              <input type="radio" name="mood" value="thoughtful">
+              <div class="option-content">
+                <h3>Thoughtful/Reflective</h3>
+                <p>Want something to make me think</p>
+              </div>
+            </label>
+            
+            <label class="option-card">
+              <input type="radio" name="mood" value="adventurous">
+              <div class="option-content">
+                <h3>Adventurous</h3>
+                <p>Ready for an exciting journey</p>
+              </div>
+            </label>
+          </div>
+          <button type="button" class="btn next-btn">Next</button>
+        </div>
+        
+        <div class="quiz-step" data-step="2">
+          <h2>What reading pace do you prefer?</h2>
+          <div class="options">
+            <label class="option-card">
+              <input type="radio" name="pace" value="fast" required>
+              <div class="option-content">
+                <h3>Fast-paced</h3>
+                <p>Page-turners that keep me hooked</p>
+              </div>
+            </label>
+            
+            <label class="option-card">
+              <input type="radio" name="pace" value="slow">
+              <div class="option-content">
+                <h3>Slow and steady</h3>
+                <p>Enjoy savoring beautiful prose</p>
+              </div>
+            </label>
+            
+            <label class="option-card">
+              <input type="radio" name="pace" value="varied">
+              <div class="option-content">
+                <h3>It depends</h3>
+                <p>I like a mix of both</p>
+              </div>
+            </label>
+          </div>
+          <button type="button" class="btn prev-btn">Back</button>
+          <button type="button" class="btn next-btn">Next</button>
+        </div>
+        
+        <div class="quiz-step" data-step="3">
+          <h2>How long of a book?</h2>
+          <div class="options">
+            <label class="option-card">
+              <input type="radio" name="length" value="short" required>
+              <div class="option-content">
+                <h3>Short (under 300 pages)</h3>
+                <p>Something I can finish quickly</p>
+              </div>
+            </label>
+            
+            <label class="option-card">
+              <input type="radio" name="length" value="medium">
+              <div class="option-content">
+                <h3>Medium (300-500 pages)</h3>
+                <p>A satisfying but not overwhelming read</p>
+              </div>
+            </label>
+            
+            <label class="option-card">
+              <input type="radio" name="length" value="long">
+              <div class="option-content">
+                <h3>Long (500+ pages)</h3>
+                <p>I want to really dive into a world</p>
+              </div>
+            </label>
+          </div>
+          <button type="button" class="btn prev-btn">Back</button>
+          <button type="button" class="btn next-btn">Next</button>
+        </div>
+        
+        <div class="quiz-step" data-step="4">
+          <h2>Preferred genre?</h2>
+          <div class="options">
+            <select name="genre" required>
+              <option value="">Select a genre</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Non-Fiction">Non-Fiction</option>
+              <option value="Science Fiction">Science Fiction</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Romance">Romance</option>
+              <option value="Horror">Horror</option>
+              <option value="Historical Fiction">Historical Fiction</option>
+              <option value="Biography">Biography</option>
+              <option value="Memoir">Memoir</option>
+            </select>
+          </div>
+          <button type="button" class="btn prev-btn">Back</button>
+          <button type="submit" class="btn">Get Recommendations</button>
+        </div>
+      </form>
+      
+      <div id="recommendations" class="recommendations-container" style="display: none;">
+        <h2>Recommended For You</h2>
+        <div class="recommendations-grid" id="recommendationsGrid">
+          <!-- Recommendations will be inserted here -->
+        </div>
+        <a href="/archive" class="btn">Browse All Reviews</a>
+      </div>
+    </main>
+  </div>
+  
+  <script src="/js/app.js"></script>
+</body>
+</html>

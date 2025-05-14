@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= review.title %> | Public Book Archive</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/turn.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Book Review: <%= review.title %></h1>
+      <a href="/archive" class="back-btn">← Back to Archive</a>
+    </header>
+    
+    <main>
+      <div id="book" class="book">
+        <div class="page front-cover">
+          <div class="cover-content">
+            <h2><%= review.title %></h2>
+            <p class="author">by <%= review.author %></p>
+            <div class="rating">
+              <% for(let i=0; i<5; i++) { %>
+                <% if(i < review.rating) { %>
+                  <span class="star filled">★</span>
+                <% } else { %>
+                  <span class="star">☆</span>
+                <% } %>
+              <% } %>
+            </div>
+            <p class="genre"><%= review.genre %></p>
+          </div>
+        </div>
+        
+        <div class="page review-page">
+          <div class="review-content">
+            <h3>Community Review</h3>
+            <p><%= review.review %></p>
+          </div>
+        </div>
+        
+        <div class="page back-cover">
+          <div class="cover-content">
+            <h3>Public Book Archive</h3>
+            <p>Share your own review or discover more books</p>
+            <div class="action-buttons">
+              <a href="/submit" class="btn">Submit a Review</a>
+              <a href="/recommend" class="btn">Get Recommendations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      $('#book').turn({
+        width: 800,
+        height: 600,
+        autoCenter: true,
+        duration: 1000,
+        gradients: true
+      });
+    });
+  </script>
+</body>
+</html>
