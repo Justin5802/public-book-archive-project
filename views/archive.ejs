@@ -29,19 +29,23 @@
             <option value="Historical Fiction">Historical Fiction</option>
             <option value="Biography">Biography</option>
             <option value="Memoir">Memoir</option>
+            <option value="Poetry">Poetry</option>
+            <option value="Young Adult">Young Adult</option>
           </select>
           <select id="ratingFilter">
             <option value="">All Ratings</option>
             <option value="5">5 Stars</option>
-            <option value="4">4+ Stars</option>
-            <option value="3">3+ Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Stars</option>
           </select>
         </div>
       </div>
       
       <div class="archive-grid" id="archiveGrid">
         <% reviews.forEach(review => { %>
-          <div class="book-card" data-genre="<%= review.genre %>" data-rating="<%= review.rating %>">
+          <div class="book-card" data-genre="<%= review.genre %>" data-rating="<%= review.rating %>" data-review="<%= review.review %>">
             <div class="book-cover">
               <div class="book-spine"></div>
               <h3><%= review.title %></h3>

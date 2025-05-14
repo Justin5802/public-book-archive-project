@@ -148,8 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
           const matchesGenre = genreValue === '' || genre === genreValue;
           const matchesRating = ratingValue === '' || 
             (ratingValue === '5' && rating === '5') ||
-            (ratingValue === '4' && rating >= '4') ||
-            (ratingValue === '3' && rating >= '3');
+            (ratingValue === '4' && rating === '4') ||
+            (ratingValue === '3' && rating === '3') ||
+            (ratingValue === '2' && rating === '2') ||
+            (ratingValue === '1' && rating === '1');
           
           if (matchesSearch && matchesGenre && matchesRating) {
             card.style.display = 'flex';
