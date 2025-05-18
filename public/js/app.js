@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Recommendation Quiz
-    const quizForm = document.getElementById('recommendForm');
+    const quizForm = document.getElementById('quiz-book');
     if (quizForm) {
-      const steps = document.querySelectorAll('.quiz-step');
+      const steps = document.querySelectorAll('.quiz-page');
       let currentStep = 0;
       
       // Show first step
@@ -203,6 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Hide form and show recommendations
-    document.getElementById('recommendForm').style.display = 'none';
+    document.getElementById('quiz-book').style.display = 'none';
     container.style.display = 'block';
   }
